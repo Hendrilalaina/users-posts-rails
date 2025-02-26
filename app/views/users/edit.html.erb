@@ -1,0 +1,17 @@
+<div class="container">  
+  <h2 class="text-center">Edit the user</h2>
+  <p style="color: red"><%= notice %></p>
+
+  <% if @user.errors.any? %>
+    <div>
+      <h3><%= pluralize(@user.errors.count, "error" )%> occured!</h3>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>    
+  <% end %> 
+
+  <%= render "form", user: @user %>
+</div>

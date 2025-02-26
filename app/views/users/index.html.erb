@@ -1,0 +1,23 @@
+<h2 class="text-center">List of users</h2>
+
+<div class="container">
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-sm-6 mt-4">
+        <div class="card text-center shadow">
+          <div class="card-header">
+            <%= user.username %>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= user.first_name + " " + user.last_name %></h5>
+            <p class="card-text"><%= user.email %></p>
+            <%= link_to "Show this user", user_path(user) %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= pluralize(user.posts.count, "post") %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

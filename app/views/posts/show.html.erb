@@ -1,0 +1,22 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+  <h3>Show the post details</h3>
+  <%= link_to "Back to posts", posts_path %>
+
+  <div>
+    <div class="card text-center shadow">
+      <div class="card-header">
+        <p>by <span style="font-style: italic"><%= @post.user.username %></span></p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @post.title %></h5>
+        <p class="card-text"><%= @post.description %></p>
+        
+      </div>
+      <div class="card-footer text-muted d-inline-flex justify-content-center">        
+        <%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-primary me-2" %>
+        <%= button_to "Delete", @post, method: :delete, class: "btn btn-outline-danger ms-2" %>
+      </div>
+    </div>
+  </div>
+</div>

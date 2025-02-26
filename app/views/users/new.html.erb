@@ -1,0 +1,17 @@
+<div class="container">  
+  <h2 class="text-center">Sign up to the App</h2>
+  <p style="color: red"><%= notice %></p>
+
+  <% if @user.errors.any? %>
+    <div>
+      <h3><%= @user.errors.count %> error(s) occured!</h3>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>    
+  <% end %> 
+
+  <%= render "form", user: @user %>
+</div>

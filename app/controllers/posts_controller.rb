@@ -59,6 +59,7 @@ class PostsController < ApplicationController
 
     def require_user
       user = User.find(session[:user_id])
+      user
     rescue ActiveRecord::RecordNotFound
       redirect_to login_url, notice: "You must login!"
     end
